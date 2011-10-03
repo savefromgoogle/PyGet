@@ -36,7 +36,20 @@ print('Be warned! File Looping has been implemented but is experimental.')
 print('Downloading large groups of files could lead to RAM abuse.')
 # The function that actually gets stuff
 def getDownload(urlToGetFile, fileNameToSave):  # Grab the file(s)
+    filelen=0
+    data=str(urllib2.urlopen(urlToGetFile).info())
+    data=data[data.find("Content-Length"):]
+    data=data[16:data.find("\r")]
+    filelen+=int(data)
+    
+    # Placeholder for progressbar:
+    widgets = ['Download Progress: ', Percentage(), ' ',
+                   Bar(marker='#',left='[',right=']'),
+                   ' ', ETA(), ' ', FileTransferSpeed()]
+    pbar = ProgressBar(widgets=widgets, maxval=filelen)
+    pbar.start()
     urllib.urlretrieve(urlToGetFile, fileNameToSave)
+    pbar.finish()
 # This looks redundant now, but just wait... :)
 def getSpecialDownload(urlToGetFile, fileNameToSave):
     urllib.urlretrieve(urlToGetFile, fileNameToSave)
@@ -66,7 +79,7 @@ def fileLoopCheck():
     if specialDownload == 'n':
         urlToGetFile = raw_input('Please enter the download URL: ')
         fileNameToSave = raw_input('Enter the desired path and filename: ')
-        getDownload()
+        getDownload(urlToGetFile,fileNameToSave)
     elif specialDownload == 'y':
         fileNameUrls = raw_input('Enter the filename (with path) that contains URLs: ')
         baseDir = raw_input('Enter the directory where you want the files saved: ')
