@@ -46,7 +46,12 @@ def get_reg_download(urlToGetFile, fileNameToSave):  # Grab the file(s)
     data=str(urllib2.urlopen(urlToGetFile).info())
     data=data[data.find("Content-Length"):]
     data=data[16:data.find("\r")]
-    filelen+=int(data)
+    
+    try:
+        filelen+=int(data)
+    except ValueError:
+        filelen=100 # The Length can't be retrieved so we replace it by a length average webpage (with pictures) length is set in kb
+    
 
     # Placeholder for progressbar:
     widgets = ['Download Progress: ', Percentage(), ' ',
@@ -72,7 +77,11 @@ def get_overall_length(fileNameUrls, baseDir):
         data = str(urllib2.urlopen(line).info())
         data = data[data.find('Content-Length'):]
         data = data[16:data.find('\r')]
-        overallLength += int(data)
+        try:
+            overallLength += int(data)
+        except ValueError:
+            overallLength += 100 #The Length can't be retrieved so we replace it by a length average webpage (with pictures) length is set in kb
+    
     special_download_work(fileNameUrls, baseDir, overallLength)
 
 # Oh, you thought you were done? Nope, I'm gonna ask you more questions :)
