@@ -1,25 +1,24 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 # README:                                         #
-#      Piddle-v0.01                               #
-#          Downloader written in Python           #
+#      PyGet-v0.01                                #
+#          Download Manager written in Python     #
 #                                                 #
 #                                                 #
 # Authors:                                        #
-#      Brian Tomlinson                            #
-#          darthlukan@gmail.com                   #
 #      Manuel Debaux                              #
-#          debaux.manual@gmail.com                #
-#      Brian Turner                               #
-#          archkaine@gmail.com                    #
+#          debaux.manuel@gmail.com                #
+# Original Project:                               #
+#      piddle                                     #
+#          https://github.com/darthlukan/piddle   #
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-Piddle is a small program in the vein of wget and aria2.
-I was unhappy with the usability of these two existing programs
-and was faced with needing to write something for my final project
-in my beginning programming class.  Thus Piddle was born.
+PyGet is a lightweight download manager the vein of wget and aria2.
+But it'll be also provided with a Graphical frontend for better user experience.
 
-I don't expect a ton of people to want to use this, that's okay,
-I'm writing it for me :)
+I forked this project from the original project piddle (https://github.com/darthlukan/piddle) where I participated.
 
-Simply run the program and follow the prompts.  More advanced features
-are in development as is this README file.
+The decision is due to two reasons :
+- Avoid collaboration matters due to my lack of git experience.
+- my idea start to be more different than the original idea.
+
+I want to make a download manager that is both easy to use and complete (with tons of new features)

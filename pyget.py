@@ -1,23 +1,24 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# Filename: pydl.py                                                 #
-# Authors: Brian Tomlinson <darthlukan@gmail.com>                   #
-#          Manuel Debaux <debaux.manual@gmail.com>                  #
-#          Brian Turner <archkaine@gmail.com>                       #
-# URL: git@github.com:darthlukan/piddle.git                         #
-# Description: A simple CLI download manager written in Python.     #
-# Warning: If you received this program from any source other than  #
-# the above noted URL, please check the source code! You may have   #
-# downloaded a file with malicious code injected.                   #
-# License: GPLv2, Please see the included LICENSE file.             #
-# Note: This software should be considered experimental!            #
+# Filename: pydl.py #
+# Authors: Brian Tomlinson <darthlukan@gmail.com> #
+# Manuel Debaux <debaux.manual@gmail.com> #
+# Brian Turner <archkaine@gmail.com> #
+# URL: git@github.com:darthlukan/piddle.git #
+# Description: A simple CLI download manager written in Python. #
+# Warning: If you received this program from any source other than #
+# the above noted URL, please check the source code! You may have #
+# downloaded a file with malicious code injected. #
+# License: GPLv2, Please see the included LICENSE file. #
+# Note: This software should be considered experimental! #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Explanation of import list:
 # os and sys are needed to make sure that files and system level stuff
-# are handled properly.  urllib(2) for communications (we are downloading)
+# are handled properly. urllib(2) for communications (we are downloading)
 # fileinput handles looping over links in a file (txt for now, csv later)
-# progressbar adds some bling for the user to look at while we work.  To get
+# progressbar adds some bling for the user to look at while we work. To get
 # progressbar to work, pip2 install progressbar.
 
 import os
@@ -35,12 +36,26 @@ and specifying where to save them, are as simple as possible. Let's get to it!""
 print('Be warned! File Looping has been implemented but is experimental.')
 print('Downloading large groups of files could lead to RAM abuse.')
 # The function that actually gets stuff
-def getDownload(urlToGetFile, fileNameToSave):  # Grab the file(s)
+def getDownload(urlToGetFile, fileNameToSave): # Grab the file(s)
     filelen=0
-    data=str(urllib2.urlopen(urlToGetFile).info())
-    data=data[data.find("Content-Length"):]
-    data=data[16:data.find("\r")]
-    filelen+=int(data)
+    data=""
+    retry=False
+    error=False
+    
+    try:
+        data=str(urllib2.urlopen(urlToGetFile).info())
+        index=data.find("Content-Length")
+        assert(index != -1), "Impossible déterminer la taille du fichier"
+        data=data[index:]
+        data=data[16:data.find("\r")]
+        filelen+=int(data)
+    except Exception as err:
+        print(err)
+    
+    if filelen == 0:
+        filelen=10.5
+    if ".flv" in urlToGetFile:
+        filelen=30000
     
     # Placeholder for progressbar:
     widgets = ['Download Progress: ', Percentage(), ' ',
@@ -48,15 +63,26 @@ def getDownload(urlToGetFile, fileNameToSave):  # Grab the file(s)
                    ' ', ETA(), ' ', FileTransferSpeed()]
     pbar = ProgressBar(widgets=widgets, maxval=filelen)
     pbar.start()
-    urllib.urlretrieve(urlToGetFile, fileNameToSave)
-    pbar.finish()
+    try:
+        urllib.urlretrieve(urlToGetFile, fileNameToSave)
+    except IOError:
+        print("%s is an incorrect filename, cannot save the file" % fileNameToSave)
+        error=True
+    finally:
+        pbar.finish()
+    
+    if error:
+        if raw_input('Do you want to retry with a new filename ? (y/n): ') == "y":
+            fileNameToSave=raw_input('Enter the desired path and filename: ')
+            getDownload(urlToGetFile, fileNameToSave)
+            
 # This looks redundant now, but just wait... :)
 def getSpecialDownload(urlToGetFile, fileNameToSave):
     urllib.urlretrieve(urlToGetFile, fileNameToSave)
     # Placeholder for progressbar:
     #widgets = ['Overall Progress: ', Percentage(), ' ',
-    #               Bar(marker='#',left='[',right=']'),
-    #               ' ', ETA(), ' ', FileTransferSpeed()]
+    # Bar(marker='#',left='[',right=']'),
+    # ' ', ETA(), ' ', FileTransferSpeed()]
     #pbar = ProgressBar(widgets=widgets, maxval=nl)
     #pbar.start()
 
