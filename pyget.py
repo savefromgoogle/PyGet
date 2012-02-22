@@ -55,16 +55,25 @@ def getDownload(urlToGetFile, fileNameToSave): # Grab the file(s)
     if filelen == 0:
         filelen=10.5
     if ".flv" in urlToGetFile:
-        filelen=30000
-    
+        filelen=300000
     # Placeholder for progressbar:
     widgets = ['Download Progress: ', Percentage(), ' ',
-                   Bar(marker='#',left='[',right=']'),
+                   Bar(marker=RotatingMarker(),left='[',right=']'),
                    ' ', ETA(), ' ', FileTransferSpeed()]
     pbar = ProgressBar(widgets=widgets, maxval=filelen)
     pbar.start()
     try:
-        urllib.urlretrieve(urlToGetFile, fileNameToSave)
+        webfile=urllib.urlopen(urlToGetFile)
+        byte = webfile.read(1)
+        data=byte
+        cur=0
+        while byte:
+            byte = webfile.read(1)
+            data+=byte
+            cur+=1
+            pbar.update(cur)
+        with open(fileNameToSave,'wb') as f:
+            webfile.write(data)
     except IOError:
         print("%s is an incorrect filename, cannot save the file" % fileNameToSave)
         error=True
