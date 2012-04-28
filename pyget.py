@@ -73,7 +73,7 @@ def getDownload(urlToGetFile, fileNameToSave): # Grab the file(s)
             cur+=1
             pbar.update(cur)
         with open(fileNameToSave,'wb') as f:
-            webfile.write(data)
+            f.write(data)
     except IOError:
         print("%s is an incorrect filename, cannot save the file" % fileNameToSave)
         error=True
