@@ -1,4 +1,3 @@
----
 README:
 	PyGet-v0.01dev
 		Download Manager written in Python
@@ -14,7 +13,8 @@ Authors:
     <archkaine@gmail.com>
 
 Original Project:
-    [piddle](https://github.com/darthlukan/piddle/)
+[piddle](https://github.com/darthlukan/piddle/)
+
 ---
 
 Contents:
@@ -28,7 +28,7 @@ Contents:
 
 ---
 
-1. About PyGet:
+### About PyGet:
 
     PyGet is a small program in the vein of wget and aria2.
     I was unhappy with the usability of these two existing programs
@@ -40,7 +40,7 @@ Contents:
 
 ---
 
-2. System Requirements:
+### System Requirements:
 
     A current Linux distribution with Python-2.7.2. Older Python versions are
     untested and are therefore unsupported.  Python-3.x.x is unsupported at this time
@@ -55,7 +55,7 @@ Contents:
 
 ---
 
-3. Installation:
+### Installation:
 
     PyGet requires a few dependencies that are slated to be provided in a 
     future release.  You only need to install these dependencies manually if you
@@ -78,7 +78,7 @@ Contents:
 
 ---
 
-4. Basic usage:
+### Basic usage:
 
     Defaults:
     Most users will find the default behavior of PyGet to be just fine for everyday
@@ -90,14 +90,14 @@ Contents:
 
 ---
 
-5. Advanced Usage:
+### Advanced Usage:
     Advanced users and CLI junkies will appreciate PyGet's command line arguments.
     They can be found by executing 'pyget.py --help'.  For more help, see pyget.py and scroll
     down to the main() function.
 
 ---
 
-6. FAQ
+### FAQ
 
 
 
@@ -124,7 +124,7 @@ Q: You know the downloads would go faster if you just used 'X' module...
 A: Yep, but then that doesn't solve the problem, does it?  I would rather use
 urllib and urllib2 and simply contribute a fix to the community rather than skirt
 the real problem and hope that someone else has the time and know-how to do it.
-    Besides, other methods to accomplish the same tasks as those two modules take a lot
+Besides, other methods to accomplish the same tasks as those two modules take a lot
 more typing and are not really as elegant and simple to read.
 
 
@@ -143,7 +143,7 @@ Q: Why doesn't PyGet work on 'X' OS?  You hate on anything that isn't Linux or s
 
 A: My distaste for Windows aside, I don't "hate" any OS in particular.  If your OS
 isn't supported it's because I have yet to add the necessary compatible code.  
-    Support for Windows and Mac is incoming, but not before all features work perfectly
+Support for Windows and Mac is incoming, but not before all features work perfectly
 as intended on the development systems, which all happen to run Linux.
 
 
@@ -174,7 +174,7 @@ A: There is no official bug tracker or feedback form to fill out.  If you have f
 or just want to know who to yell at, email Brian Tomlinson at darthlukan@gmail.com.
 If you want to submit patches, please git pull the master branch of PyGet on GitHub
 and send me a pull request with a detailed description of what your patch offers.
-    If it is as good as you say it is (after review) then I'll merge it into master
+If it is as good as you say it is (after review) then I'll merge it into master
 and credit you in the commit and code.
 
 
@@ -183,12 +183,12 @@ Q: I want to contribute to your project! What can I do?
 A: Assuming that you are talking about code, feedback, testing, etc.  Email 
 Brian Tomlinson at darthlukan@gmail.com and we'll go from there.  If in the off-chance 
 you are talking about monetary contributions, thank you for your thoughts, but no thanks.
-    Firstly, while PyGet could very well turn into a larger project that would warrant 
+Firstly, while PyGet could very well turn into a larger project that would warrant 
 a price tag to the enterprise world, it is still too small for that and honestly, doesn't cost
 me any more than I would already be paying in electricity, computers, net, etc.  So save
 your cash.  Secondly, because of the first answer, I haven't setup paypal or any other
 donation service.  I enjoy coding enough that I'll do it for free for as long as I can.
-    If you really want to contribute monetarily, hire me to program for your company :)
+If you really want to contribute monetarily, hire me to program for your company :)
 
 
 Q: Where can I keep up to date on PyGet updates without having to check GitHub
