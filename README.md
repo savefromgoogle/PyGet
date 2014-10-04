@@ -5,7 +5,7 @@ README:
 
 Authors:
 
-* [Manuel Debaux](https://plus.google.com/u/0/100420239170831225132/)
+* [Manuel Debaux](http://www.darkredman.fr/)
     <contact@darkredman.fr>
 * [Brian Tomlinson](https://plus.google.com/u/0/109039118030883131674/)
     <darthlukan@gmail.com>
