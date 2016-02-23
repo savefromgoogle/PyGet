@@ -5,7 +5,7 @@ README:
 
 Authors:
 
-* [Manuel Debaux](http://www.darkredman.fr/)
+* [DarkRedman](http://www.darkredman.fr/)
     <contact@darkredman.fr>
 * [Brian Tomlinson](https://plus.google.com/u/0/109039118030883131674/)
     <darthlukan@gmail.com>
@@ -13,7 +13,7 @@ Authors:
     <archkaine@gmail.com>
 
 Original Project:
-[piddle](https://github.com/darthlukan/piddle/)
+[piddle](https://github.com/ArchKaine/piddle)
 
 ---
 
