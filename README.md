@@ -17,7 +17,7 @@ Contents:
 7. Authors
 8. License
 
-(#anchors-in-markdown)
+[#anchors-in-markdown]
 
 ## About PyGet:
 
