@@ -8,16 +8,14 @@
 
 Contents:
 
-1. [About Pyget](#anchors-in-markdown)
-2. Installation
-3. Basic Usage
-4. Advanced Usage
-5. System Requirements
-6. FAQ
-7. Authors
-8. License
-
-[#anchors-in-markdown]
+1. [About Pyget](#about-pyget)
+2. [Installation](#installation)
+3. [Basic Usage](#basic-usage)
+4. [Advanced Usage](#advanced-usage)
+5. [System Requirements](#system-requirements)
+6. [FAQ](#faq)
+7. [Authors](#authors)
+8. [License](#license)
 
 ## About PyGet:
 
