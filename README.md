@@ -8,7 +8,7 @@
 
 Contents:
 
-1. About PyGet
+1. [About PyGet][about]
 2. Installation
 3. Basic Usage
 4. Advanced Usage
@@ -17,6 +17,7 @@ Contents:
 7. Authors
 8. License
 
+[about]
 ## About PyGet:
 
 PyGet is a small program in the vein of wget and aria2.
