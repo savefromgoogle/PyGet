@@ -1,3 +1,6 @@
+![version 0.28](https://img.shields.io/badge/version-0.28-green.svg)
+![python 2.7.2](https://img.shields.io/badge/python-2.7.2-yellow.svg)
+![license GPLv2](https://img.shields.io/badge/license-GPLv2-green.svg)
 README:
 	PyGet-v0.01dev
 		Download Manager written in Python
