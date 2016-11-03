@@ -1,10 +1,10 @@
+# PyGet
+
 ![version 0.28](https://img.shields.io/badge/version-0.28-green.svg)
 ![python 2.7.2](https://img.shields.io/badge/python-2.7.2-yellow.svg)
 ![dependencies progressbar](https://img.shields.io/badge/dependencies-progressbar-green.svg)
 ![license GPLv2](https://img.shields.io/badge/license-GPLv2-green.svg)
 ![platform linux](https://img.shields.io/badge/platform-linux-green.svg)
-
-# PyGet
 
 Contents:
 
