@@ -1,108 +1,86 @@
 ![version 0.28](https://img.shields.io/badge/version-0.28-green.svg)
 ![python 2.7.2](https://img.shields.io/badge/python-2.7.2-yellow.svg)
+![dependencies progressbar](https://img.shields.io/badge/dependencies-progressbar-green.svg)
 ![license GPLv2](https://img.shields.io/badge/license-GPLv2-green.svg)
-README:
-	PyGet-v0.01dev
-		Download Manager written in Python
+![platform linux](https://img.shields.io/badge/platform-linux-green.svg)
 
-
-Authors:
-
-* [DarkRedman](http://www.darkredman.fr/)
-    <contact@darkredman.fr>
-* [Brian Tomlinson](https://plus.google.com/u/0/109039118030883131674/)
-    <darthlukan@gmail.com>
-* [Brian Turner](https://plus.google.com/u/0/107589895345000267917/)
-    <archkaine@gmail.com>
-
-Original Project:
-[piddle](https://github.com/ArchKaine/piddle)
-
----
+# PyGet
 
 Contents:
 
 1. About PyGet
-2. System Requirements
-3. Installation
-4. Basic Usage
-5. Advanced Usage
+2. Installation
+3. Basic Usage
+4. Advanced Usage
+5. System Requirements
 6. FAQ
+7. Authors
+8. License
 
----
+## About PyGet:
 
-### About PyGet:
+PyGet is a small program in the vein of wget and aria2.
+I was unhappy with the usability of these two existing programs
+and was faced with needing to write something for my final project
+in my beginning programming class. Thus PyGet was born.
 
-    PyGet is a small program in the vein of wget and aria2.
-    I was unhappy with the usability of these two existing programs
-    and was faced with needing to write something for my final project
-    in my beginning programming class.  Thus PyGet was born.
+I don't expect a ton of people to want to use this, that's okay,
+I'm writing it for me :)
 
-    I don't expect a ton of people to want to use this, that's okay,
-    I'm writing it for me :)
+PyGet is a fork of [piddle](https://github.com/ArchKaine/piddle)
 
----
+## Installation:
 
-### System Requirements:
+PyGet requires a few dependencies that are slated to be provided in a 
+future release.  You only need to install these dependencies manually if you
+are using the current version of PyGet.
 
-    A current Linux distribution with Python-2.7.2. Older Python versions are
-    untested and are therefore unsupported.  Python-3.x.x is unsupported at this time
-    but official support is planned for the near future.
+Dependencies:
+    Python Modules: progressbar 
 
-    What about Windows and Mac?
-        
-    PyGet may in fact work on both of these platforms and future support is
-    intended, but they are untested.  Presumably, Mac systems could work with
-    PyGet's current code, though this is again, untested.  Windows support is almost
-    definitely a "no" at this time.
+To install progressbar, use pip2 or your package manager's version into your 
+PYTHONPATH.  All other imports are part of the standard Python installation for
+most Linux distributions.
 
----
+Main program installation:
 
-### Installation:
+To install PyGet, 'git clone git@github.com:darkredman/pyget.git' in your desired
+installation directory (~/git/pyget is recommended).  Ensure that pyget.py is 
+executable (as user, chmod +x pyget.py) and then symlink pyget.py to /usr/bin/pyget 
+for convenience.  If the last step is not followed, you will have to cd into the folder
+containing pyget.py and run './pyget.py' that way. 
 
-    PyGet requires a few dependencies that are slated to be provided in a 
-    future release.  You only need to install these dependencies manually if you
-    are using the current version of PyGet.
+## Basic usage:
 
-    Dependencies:
-        Python Modules: progressbar 
+Defaults:
+Most users will find the default behavior of PyGet to be just fine for everyday
+use.  Default behavior means prompting via the terminal.  This is the method that 
+has seen the most extensive testing.  To run PyGet with the default settings, cd 
+into the directory where you have installed PyGet (most likely ~/git/piddle), ensure
+that the filename "pyget.py" is executable (as user, chmod +x pyget.py), and execute
+./pyget.py.  Follow the prompts and enjoy painless downloading.
 
-    To install progressbar, use pip2 or your package manager's version into your 
-    PYTHONPATH.  All other imports are part of the standard Python installation for
-    most Linux distributions.
+## Advanced Usage:
 
-    Main program installation:
+Advanced users and CLI junkies will appreciate PyGet's command line arguments.
+They can be found by executing 'pyget.py --help'.  For more help, see pyget.py and scroll
+down to the main() function.
 
-    To install PyGet, 'git clone git@github.com:darkredman/pyget.git' in your desired
-    installation directory (~/git/pyget is recommended).  Ensure that pyget.py is 
-    executable (as user, chmod +x pyget.py) and then symlink pyget.py to /usr/bin/pyget 
-    for convenience.  If the last step is not followed, you will have to cd into the folder
-    containing pyget.py and run './pyget.py' that way. 
+## System Requirements:
 
----
+A current Linux distribution with Python-2.7.2. Older Python versions are
+untested and are therefore unsupported.  Python-3.x.x is unsupported at this time
+but official support is planned for the near future.
 
-### Basic usage:
+What about Windows and Mac?
 
-    Defaults:
-    Most users will find the default behavior of PyGet to be just fine for everyday
-    use.  Default behavior means prompting via the terminal.  This is the method that 
-    has seen the most extensive testing.  To run PyGet with the default settings, cd 
-    into the directory where you have installed PyGet (most likely ~/git/piddle), ensure
-    that the filename "pyget.py" is executable (as user, chmod +x pyget.py), and execute
-    ./pyget.py.  Follow the prompts and enjoy painless downloading.
-
----
-
-### Advanced Usage:
-    Advanced users and CLI junkies will appreciate PyGet's command line arguments.
-    They can be found by executing 'pyget.py --help'.  For more help, see pyget.py and scroll
-    down to the main() function.
-
----
-
-### FAQ
+PyGet may in fact work on both of these platforms and future support is
+intended, but they are untested.  Presumably, Mac systems could work with
+PyGet's current code, though this is again, untested.  Windows support is almost
+definitely a "no" at this time.
 
 
+## FAQ
 
 Q: Do you know what "PyGet" means in English!?!?!
 
@@ -208,3 +186,16 @@ Q: Will PyGet ever have a GUI?
 A: Yes! Currently I am looking at a few options and researching which of those 
 is easiest to implement cross-platform while maintaining the highest levels of 
 stability (despite the OS in certain cases *cough* Windows *cough*).
+
+## Authors
+
+* [DarkRedman](http://www.darkredman.fr/)
+    <contact@darkredman.fr>
+* [Brian Tomlinson](https://plus.google.com/u/0/109039118030883131674/)
+    <darthlukan@gmail.com>
+* [Brian Turner](https://plus.google.com/u/0/107589895345000267917/)
+    <archkaine@gmail.com>
+
+## License
+
+Check the LICENSE file for the full text version
